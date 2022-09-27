@@ -1,64 +1,83 @@
-:root {
-    --bg-main: #121214;
-    --bg-buttom: rgba(66, 211, 255, 0.13);
-    
-    --color-main: #FFFFFF;
-    --color-active: #42D3FF;
-
-    font-size: 62.5%;
-
-}
-
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
 }
 
-.body{
-    background: var(--bg-main);
-    color: var(--color-main);
+
+:root {
+    --bg-color: #121214;
+
+    --base-color: 194;
+    --bg-primary-color-light: hsla(194, 100%, 63%, 0.13);
+    --primary-color: hsl(194, 100%, 63%);
+    --text-color: #ffffff;
+
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-main{
-    width: 22.8rem;
-}
-.time, .buttons{
-    width: 100%
+
+    display: grid;
+
+    min-height: 100vh;
 }
 
-.timer span {
-    font-size: 8.8rem;
+main {
+    justify-self: center;
+    align-self: end;
 }
-buttom {
-    background-color: var(--bg-buttons);
+
+
+button{
+    background-color: transparent;
     border: none;
+    
+    cursor: pointer;
 }
 
-.buttons{
-    width: 100%;
+.play svg path,
+.pause svg path,
+.sound-on svg path {
+    fill: var(--primary-color)
+}
+
+button svg {
+    width: clamp(3.2rem, 2rem + 12vw, 6.4rem)
+}
+
+.hide{
+    display: none
+}
+
+#timer{
+    font-size: clamp(4rem , 4rem + 10vw , 8.8rem);
+    
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--bg-buttom);
-    border-radius: 99px;
-    padding: 2.2rem 4.0rem;
+
+    margin-bottom: 1.6rem;
 }
 
+#controls{
+    background-color: var(--bg-primary-color-light);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 3.2rem;
+    
+    border-radius: 9999px;
+    width: clamp(10rem, 10rem + 30vw, 22.8rem);
+    height: clamp(5rem, 8rem + 10vw, 10.8rem )
+}
 
-
-
-
-
-
-footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+footer{
+    justify-self: end;
+    align-self: end;
+    padding: 0 4rem 3.2rem 0;
 }
